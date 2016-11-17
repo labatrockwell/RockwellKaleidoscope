@@ -123,11 +123,15 @@ void ofApp::keyPressed(int key){
         {
             ((ofxUIToggle*)gui->getWidget("VISIBLE"))->setValue(!gui->isVisible());
             gui->getWidget("VISIBLE")->triggerSelf();
+            break;
         }
         case 'f':
         {
             kaleidoscope.togglePredator();
+            break;
         }
+        default:
+            break;
     }
 }
 
