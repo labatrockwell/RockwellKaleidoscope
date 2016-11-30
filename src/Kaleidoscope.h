@@ -82,7 +82,7 @@ class Kaleidoscope
         predatorMode = !predatorMode;
     }
     
-    void update(ofTexture& textureImg, float _waveAmp, float _kaleidoscopeSpeed){
+    void update(ofTexture& textureImg, float _waveAmp, float _kaleidoscopeSpeed, float _brightness, float _contrast ){
         
         if (spinStep > count){
             spinStep = _kaleidoscopeSpeed;
@@ -107,6 +107,8 @@ class Kaleidoscope
         shader.setUniform1f("iGlobalTime", ofGetElapsedTimef() );
         shader.setUniform1f("waveAmplitude", _waveAmp);
         shader.setUniform1f("predatorMode", predatorMode);
+        shader.setUniform1f("brightness", _brightness);
+        shader.setUniform1f("contrast", _contrast);
         ofDrawRectangle(0,0, 640, 480);
         shader.end();
         mFbo.end();

@@ -29,7 +29,12 @@ void main()
     uv.x += waveAmplitude * sin((uv.y+iGlobalTime*50.0)/50.0);
 
 	// Get the pixel color at the index.
-	vec4 color = texture2DRect(iChannel0,  uv);
+//	vec4 color = texture2DRect(iChannel0,  uv);
+//    vec4 color = vec4(1.0f,0f,0f,0f);
+    
+    //brightness
+//    vec4 brightness = vec4(1.0f,1.0f,1.0f,1.0f);
+//    color += vec4(5.0f,5.0f,5.0f,1.0f);
     
 //    vec3 hueShift = rgb2hsv( vec3(color.r,color.g,color.b) );
 //    hueShift.x += (( sin(iGlobalTime)/2 ) + .5)/10;
@@ -37,10 +42,10 @@ void main()
     
 //    vec4 colorShift = vec4( (sin(iGlobalTime)/2) + .5 );
     
-//    color.r = colorShift.r;
-//    color.g = colorShift.g;
-//    color.b = colorShift.b;
-    
-	gl_FragColor = color;
+//    color.r += colorShift.r;
+//    color.g += colorShift.g;
+//    color.b += colorShift.b;
+    color.r = vec4(0);
+//    gl_FragColor = color;
 }
 

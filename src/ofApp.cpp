@@ -7,6 +7,8 @@ void ofApp::setup(){
     camHeight 		= USBviaETH ? 240 : 1080;//1080;//480;
     
     waveAmplitude = 60.f;
+    brightness = 1.0f;
+    contrast = 1.0f;
     kaleidoscopeSpd = .1;
     
     //we can now get back a list of devices.
@@ -42,26 +44,28 @@ void ofApp::setup(){
     
     ofSetVerticalSync(true);
     
-    gui = new ofxUICanvas();        //Creates a canvas at (0,0) using the default width
+    gui = new ofxUICanvas(100,500);        //Creates a canvas at (0,0) using the default width
     gui->addToggle("FULLSCREEN", false);
     gui->addToggle("VISIBLE", true);
     viewRawCam = false;
     gui->addToggle("raw feed", &viewRawCam);
-    gui->addSlider("triangleCameraGrab", 200, 2000, &kaleidoscope.triangleCameraGrab);
+    gui->addSlider("triangleCameraGrab", 200, 2000, &kaleidoscope.triangleCameraGrab, 300, 10);
     kCenter.x = kaleidoscope.centerPoint.x;
     kCenter.y = kaleidoscope.centerPoint.y;
-    gui->add2DPad("centerPoint", ofxUIVec2f(0, 1000), ofxUIVec2f(0, 1000), &kCenter, 100, 100);
+    gui->add2DPad("centerPoint", ofxUIVec2f(0, 1000), ofxUIVec2f(0, 1000), &kCenter, 50, 50);
     kScale.x = kaleidoscope.ksx;
     kScale.y = kaleidoscope.ksy;
-    gui->add2DPad("scale", ofxUIVec2f(350, 600), ofxUIVec2f(350, 600), &kScale, 250, 250);
+    gui->add2DPad("scale", ofxUIVec2f(100, 600), ofxUIVec2f(100, 600), &kScale, 100, 100);
     gui->add2DPad("screenDims", ofxUIVec2f(0, 2000), ofxUIVec2f(0, 2000), &screenSize, 100, 100);
-    gui->addToggle("drawDebug", &kaleidoscope.bDrawDebug);
+//    gui->addToggle("drawDebug", &kaleidoscope.bDrawDebug);
     gui->addFPS();
     //TODO: add ddl for cameras and resolutions
     gui->add2DPad("translate", ofxUIVec2f(-3000, 0), ofxUIVec2f(-3000, 0), &m_Trans, 300, 300);
     gui->addSlider("rotation", 0, 90, &m_fRotate, 300, 20);
-    gui->addSlider("speed", 0, 1.0f, &kaleidoscopeSpd , 300, 20);
-    gui->addSlider("waveSize", 0, 200, &waveAmplitude, 300, 20);
+    gui->addSlider("speed", 0, 1.0f, &kaleidoscopeSpd , 300, 10);
+    gui->addSlider("waveSize", 0, 200, &waveAmplitude, 300, 10);
+    gui->addSlider("brightness", 0, 1, &brightness, 300, 10);
+    gui->addSlider("contrast", 0, 5, &contrast, 300, 10);
     gui->autoSizeToFitWidgets();
     ofAddListener(gui->newGUIEvent, this, &ofApp::guiEvent);
     gui->loadSettings("settings.xml");
@@ -74,7 +78,7 @@ void ofApp::update(){
     kaleidoscope.centerPoint.y = kCenter.y;
     kaleidoscope.ksx = kScale.x;
     kaleidoscope.ksy = kScale.y;
-    kaleidoscope.update( vidGrabber.getTextureReference(), waveAmplitude, kaleidoscopeSpd );
+    kaleidoscope.update( vidGrabber.getTextureReference(), waveAmplitude, kaleidoscopeSpd, brightness, contrast );
 }
 
 //--------------------------------------------------------------

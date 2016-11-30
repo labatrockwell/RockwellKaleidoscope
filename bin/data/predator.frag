@@ -6,6 +6,8 @@ uniform float     iGlobalTime;           // shader playback time (in seconds)
 uniform sampler2DRect iChannel0;
 uniform float waveAmplitude;
 uniform bool predatorMode;
+uniform float brightness;
+uniform float contrast;
 
 vec3 rgb2hsv(vec3 c)
 {
@@ -50,16 +52,17 @@ void main()
         
         vec4 originalColor = texture2DRect(iChannel0, uv);
         gl_FragColor = mix(c, originalColor, (sin(iGlobalTime)/2)+.5);
+//        gl_FragColor = originalColor;
         
 //        gl_FragColor = c/2 + originalColor/2;
     
     } else {
         vec4 color = texture2DRect(iChannel0,  uv);
+        color.rgb -= brightness;        
+        color.rgb = ((color.rgb-0.5f) * max(contrast, 0))+0.5f;
+        
         gl_FragColor = color;
     }
-    
-
-
 
 
 //    vec2 uv = gl_FragCoord.xy;

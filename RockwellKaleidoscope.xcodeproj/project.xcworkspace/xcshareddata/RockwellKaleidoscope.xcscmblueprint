@@ -1,30 +1,30 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2D31179E249B4961BB159F778467F527E25332A5",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9A9CB7C315B624CBC85ED291B42E5B755501EED9",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "7E804D925461714118DB355C65BC964B41D94376" : 0,
-    "2D31179E249B4961BB159F778467F527E25332A5" : 0
+    "9A9CB7C315B624CBC85ED291B42E5B755501EED9" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A471EE36-0B06-46A1-9D07-133183BDA8D0",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "7E804D925461714118DB355C65BC964B41D94376" : "..\/..\/addons\/ofxUI",
-    "2D31179E249B4961BB159F778467F527E25332A5" : "RockwellKaleidoscope\/"
+    "9A9CB7C315B624CBC85ED291B42E5B755501EED9" : "RockwellKaleidoscope\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "RockwellKaleidoscope",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RockwellKaleidoscope.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/labatrockwell\/RockwellKaleidoscope.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2D31179E249B4961BB159F778467F527E25332A5"
-    },
-    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rezaali\/ofxUI.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E804D925461714118DB355C65BC964B41D94376"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/labatrockwell\/RockwellKaleidoscope.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9A9CB7C315B624CBC85ED291B42E5B755501EED9"
     }
   ]
 }

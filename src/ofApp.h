@@ -36,6 +36,8 @@ private:
     bool viewRawCam;
     float m_fRotate;
     float waveAmplitude;
+    float brightness;
+    float contrast;
     float kaleidoscopeSpd;
     ofxUIVec3f m_Trans;
     
