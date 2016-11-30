@@ -9,6 +9,7 @@ void ofApp::setup(){
     waveAmplitude = 60.f;
     brightness = 1.0f;
     contrast = 1.0f;
+    saturation = 1.0f;
     kaleidoscopeSpd = .1;
     
     //we can now get back a list of devices.
@@ -66,6 +67,7 @@ void ofApp::setup(){
     gui->addSlider("waveSize", 0, 200, &waveAmplitude, 300, 10);
     gui->addSlider("brightness", 0, 1, &brightness, 300, 10);
     gui->addSlider("contrast", 0, 5, &contrast, 300, 10);
+    gui->addSlider("saturation", 0, 5, &saturation, 300, 10);
     gui->autoSizeToFitWidgets();
     ofAddListener(gui->newGUIEvent, this, &ofApp::guiEvent);
     gui->loadSettings("settings.xml");
@@ -78,7 +80,7 @@ void ofApp::update(){
     kaleidoscope.centerPoint.y = kCenter.y;
     kaleidoscope.ksx = kScale.x;
     kaleidoscope.ksy = kScale.y;
-    kaleidoscope.update( vidGrabber.getTextureReference(), waveAmplitude, kaleidoscopeSpd, brightness, contrast );
+    kaleidoscope.update( vidGrabber.getTextureReference(), waveAmplitude, kaleidoscopeSpd, brightness, contrast, saturation );
 }
 
 //--------------------------------------------------------------

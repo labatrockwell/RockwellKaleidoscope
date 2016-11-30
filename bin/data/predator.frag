@@ -8,6 +8,7 @@ uniform float waveAmplitude;
 uniform bool predatorMode;
 uniform float brightness;
 uniform float contrast;
+uniform float saturation;
 
 vec3 rgb2hsv(vec3 c)
 {
@@ -58,8 +59,14 @@ void main()
     
     } else {
         vec4 color = texture2DRect(iChannel0,  uv);
-        color.rgb -= brightness;        
+        //brightness adjustments
+        color.rgb *= brightness;
+        //contrast adjustments
         color.rgb = ((color.rgb-0.5f) * max(contrast, 0))+0.5f;
+        //saturation adjustments
+        vec3 hsv = rgb2hsv(color.rgb);
+        hsv.g *= saturation;
+        color.rgb = hsv2rgb(hsv);
         
         gl_FragColor = color;
     }

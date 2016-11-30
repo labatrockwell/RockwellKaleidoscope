@@ -38,6 +38,7 @@ private:
     float waveAmplitude;
     float brightness;
     float contrast;
+    float saturation;
     float kaleidoscopeSpd;
     ofxUIVec3f m_Trans;
     
